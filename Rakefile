@@ -6,7 +6,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = "Very light-weight navigation"
 
   gem.email = "ratnikov@gmail.com"
-  gem.homepage = "http://github.com/thoughtbot/clearance"
+  gem.homepage = "http://github.com/ratnikov/navlinks"
   gem.authors = [ "Dmitry Ratnikov" ]
   gem.files = FileList["[A-Z]*", "{lib}/**/*"]
 end
