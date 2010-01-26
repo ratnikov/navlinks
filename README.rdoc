@@ -51,14 +51,16 @@ By default the plugin decorates the 'current' area with brackets. It is possible
 
 ==== app/helpers/application_helper.rb
 
-module ApplicationHelper
+  module ApplicationHelper
 
-  # causes the current navigation label to be described as:
-  # * home *
-  def decorate_current_label( current_label )
-    "* #{current_label} *"
+    # causes the current navigation label to be described as:
+    # * home *
+    def decorate_current_label( current_label )
+      "* #{current_label} *"
+    end
   end
-end
+
+Now instead of [ home ] you will see * home *
 
 = Contact
 
