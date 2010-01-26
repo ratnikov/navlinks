@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
      "lib/navlinks.rb",
      "lib/navlinks/helper.rb"
   ]
-  s.homepage = %q{http://github.com/thoughtbot/clearance}
+  s.homepage = %q{http://github.com/ratnikov/navlinks}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
