@@ -1,0 +1,21 @@
+= Very light-weight implementation for navigation links
+
+= Providing simple navigation
+
+Add navigation to the layout:
+
+  <ul id="nav">
+    <li><%= nav_link_to :home, root_path %></li>
+    <li><%= nav_link_to :foo, foo_ath %></li>
+  </ul>
+
+Label views to which navigation area they belong to:
+
+=== app/views/pages/home.html.erb
+  <%- self.nav_area = :home -%>
+
+=== app/views/foos/show.html.erb
+
+  <%- self.nav_area = :foo -%>
+
+Done!
