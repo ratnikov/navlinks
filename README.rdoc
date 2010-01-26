@@ -2,9 +2,9 @@
 
 = Simple navigation (HOWTO)
 
-== First add navigation areas to the layout
+=== First add navigation areas to the layout
 
-=== app/views/layouts/application.html.erb
+==== app/views/layouts/application.html.erb
   <html>
     <head>
     </head>
@@ -20,24 +20,24 @@
     </body>
   </html>
 
-== Next, label different views to belong to different nav areas.
+=== Next, label different views to belong to different nav areas.
 
 Let's have the home page be part of 'home' area and showing a Foo resource part of 'foo' area.
 
-=== app/views/pages/home.html.erb
+==== app/views/pages/home.html.erb
   <%- self.nav_area = :home -%>
 
-=== app/views/foos/show.html.erb
+==== app/views/foos/show.html.erb
 
   <%- self.nav_area = :foo -%>
 
-== And you're done!
+=== Done!
 
 = Localization
 
 +navlinks+ supports common localization but also allows some tricks. Suppose the localization file is as follows:
 
-=== config/locate/en.yml
+==== config/locate/en.yml
   en:
     navigation:
       home: Go home
@@ -49,7 +49,7 @@ This causes the 'home' area description to be usually 'Go home'. However if the 
 
 By default the plugin decorates the 'current' area with brackets. It is possible to override this behavior by overriding +decorate_current_label+ method:
 
-=== app/helpers/application_helper.rb
+==== app/helpers/application_helper.rb
 
 module ApplicationHelper
 
