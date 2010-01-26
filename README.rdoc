@@ -2,6 +2,11 @@
 
 = Simple navigation (HOWTO)
 
+=== Install
+
+  gem install navlinks --source http://gemcutter.org
+
+
 === First add navigation areas to the layout
 
 ==== app/views/layouts/application.html.erb
