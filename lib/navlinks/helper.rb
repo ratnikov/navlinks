@@ -1,5 +1,5 @@
 # Methods added to this helper will be available to all templates in the application.
-module NavigationHelper
+module Navlinks::Helper
   attr_accessor :nav_area
 
   def nav_link_to area, path, options = nil
