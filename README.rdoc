@@ -1,15 +1,28 @@
 = Very light-weight implementation for navigation links
 
-= Providing simple navigation
+= Simple navigation (HOWTO)
 
-Add navigation to the layout:
+== First add navigation areas to the layout
 
-  <ul id="nav">
-    <li><%= nav_link_to :home, root_path %></li>
-    <li><%= nav_link_to :foo, foo_ath %></li>
-  </ul>
+=== app/views/layouts/application.html.erb
+  <html>
+    <head>
+    </head>
+    <body>
+      <ul id="nav">
+        <li><%= nav_link_to :home, root_path %></li>
+        <li><%= nav_link_to :foo, foo_ath %></li>
+      </ul>
 
-Label views to which navigation area they belong to:
+      <div id="content">
+        <%= yield %>
+      </div>
+    </body>
+  </html>
+
+== Next, label different views to belong to different nav areas.
+
+Let's have the home page be part of 'home' area and showing a Foo resource part of 'foo' area.
 
 === app/views/pages/home.html.erb
   <%- self.nav_area = :home -%>
@@ -18,4 +31,35 @@ Label views to which navigation area they belong to:
 
   <%- self.nav_area = :foo -%>
 
-Done!
+== And you're done!
+
+= Localization
+
++navlinks+ supports common localization but also allows some tricks. Suppose the localization file is as follows:
+
+=== config/locate/en.yml
+  en:
+    navigation:
+      home: Go home
+      home_current: At home
+
+This causes the 'home' area description to be usually 'Go home'. However if the user is looking at a page that belongs to 'home', it will display 'At home'. Cool, huh?
+
+= Decoration Override
+
+By default the plugin decorates the 'current' area with brackets. It is possible to override this behavior by overriding +decorate_current_label+ method:
+
+=== app/helpers/application_helper.rb
+
+module ApplicationHelper
+
+  # causes the current navigation label to be described as:
+  # * home *
+  def decorate_current_label( current_label )
+    "* #{current_label} *"
+  end
+end
+
+= Contact
+
+Feel free to contact me with any questions/comments!
