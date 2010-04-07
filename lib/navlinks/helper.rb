@@ -3,18 +3,27 @@ module Navlinks
   module Helper
     attr_accessor :nav_area
 
-    def nav_link_to area, path, options = nil
-      label = translate(area, :scope => 'navigation', :default => area.to_s)
-      current_label = translate([ area, 'current' ].join('_'), :scope => 'navigation', :default => label)
-
-      if nav_area == area
-	link_to(decorate_current(current_label), path, :class => 'current')
-      else
-	link_to(label, path)
-      end
+    def nav_link_to(area, path, options = nil)
+      link_to(nav_label_for(area), path, :class => (nav_current?(area) ? 'current' : nil))
     end
 
     private
+
+    def nav_current?(area)
+      nav_area == area
+    end
+
+    def nav_label_for(area)
+      label = translate(area, :scope => 'navigation', :default => area.to_s)
+
+      if nav_current?(area)
+	current_label = translate([ area, 'current' ].join('_'), :scope => 'navigation', :default => label)
+	decorate_current( current_label )
+      else
+	label
+      end
+    end
+
 
     def decorate_current( current_label )
       "[ #{current_label} ]"

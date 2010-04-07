@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dmitry Ratnikov"]
-  s.date = %q{2010-01-25}
+  s.date = %q{2010-04-07}
   s.email = %q{ratnikov@gmail.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/ratnikov/navlinks}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Very light-weight navigation}
 
   if s.respond_to? :specification_version then
