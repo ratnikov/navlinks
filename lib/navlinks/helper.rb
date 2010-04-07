@@ -17,16 +17,10 @@ module Navlinks
       label = translate(area, :scope => 'navigation', :default => area.to_s)
 
       if nav_current?(area)
-	current_label = translate([ area, 'current' ].join('_'), :scope => 'navigation', :default => label)
-	decorate_current( current_label )
+	translate([ area, 'current' ].join('_'), :scope => 'navigation', :default => label)
       else
 	label
       end
-    end
-
-
-    def decorate_current( current_label )
-      "[ #{current_label} ]"
     end
   end
 end
